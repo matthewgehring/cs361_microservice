@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
-import wptools
+from wptools import *
 
 def get_meta(title):
-    soup = wptools.page(title).get_parse()
+    soup = page(title).get_parse()
     infobox = soup.data['infobox']
     return infobox
 
