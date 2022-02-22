@@ -8,11 +8,11 @@ def get_meta(title):
 
 app = Flask(__name__)
 
-# @app.route('/', methods=['GET'])
-# def welcome():
-#     return jsonify({"MESSAGE":"Welcome to our awesome platform!!"})
+@app.route('/', methods=['GET'])
+def welcome():
+    return "<h1>Welcome to my service. POST to /api to use. Contact Matthew with quesitons.</h1>"
 
-@app.route('/', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def query_records():
     title = request.json
     meta = get_meta(title['title'])
