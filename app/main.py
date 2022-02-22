@@ -14,15 +14,15 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def welcome():
-    return "<h1>Welcome to my service. POST to /api to use. Contact Matthew with questions.</h1>"
+    return "<h1>Welcome to my service. POST to /api/data or api/image to use. Contact Matthew with questions.</h1>"
 
-@app.route('/api', methods=['POST'])
+@app.route('/api/data', methods=['POST'])
 def query_records():
     title = request.json
     meta = get_meta(title['title'])
     return jsonify(meta)
 
-@app.route('/image', methods=['POST'])
+@app.route('/api/image', methods=['POST'])
 def images():
     title = request.json
     images = get_images(title['title'])
