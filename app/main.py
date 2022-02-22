@@ -1,5 +1,10 @@
 from flask import Flask, request, jsonify
-from tools import get_meta
+import wptools
+
+def get_meta(title):
+    soup = wptools.page(title).get_parse()
+    infobox = soup.data['infobox']
+    return infobox
 
 app = Flask(__name__)
 
