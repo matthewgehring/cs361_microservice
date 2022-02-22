@@ -4,7 +4,7 @@ from wptools import page
 def get_meta(title):
     soup = page(title).get_parse()
     infobox = soup.data['infobox']
-    return infobox
+    return soup
 
 app = Flask(__name__)
 
