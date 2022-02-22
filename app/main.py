@@ -3,6 +3,12 @@ from tools import get_meta
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def query_records():
+    title = request.json
+    meta = get_meta(title['title'])
+    return jsonify({"MESSAGE":"Welcome to our awesome platform!!"})
+
 @app.route('/', methods=['POST'])
 def query_records():
     title = request.json
