@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def welcome():
-    return "<h1>Welcome to my service. POST to /api/data or api/image to use. Contact Matthew with questions.</h1>"
+    return "<h1>Welcome to my service. POST to /api/data or /api/image to use. Contact Matthew with questions.</h1>"
 
 @app.route('/api/data', methods=['POST'])
 def query_records():
