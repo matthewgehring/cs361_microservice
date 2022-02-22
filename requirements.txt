@@ -1,7 +1,7 @@
 Flask==1.1.4
 gunicorn==20.1.0
 markupsafe==2.0.1
-./app/wptools
+app\wptools\
 certifi>=2017.7.27.1
 html2text>=2016.9.19
 lxml>=3.8.0
