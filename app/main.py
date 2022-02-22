@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from wptools import *
+from wptools import page
 
 def get_meta(title):
     soup = page(title).get_parse()
