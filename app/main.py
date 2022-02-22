@@ -19,4 +19,4 @@ def query_records():
 #     print(content['mytext'])
 #     return jsonify({"uuid":uuid})
 
-app.run(debug=True)
+app.run()
