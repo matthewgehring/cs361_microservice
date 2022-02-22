@@ -12,11 +12,11 @@ app = Flask(__name__)
 def welcome():
     return jsonify({"MESSAGE":"Welcome to our awesome platform!!"})
 
-@app.route('/', methods=['POST'])
-def query_records():
-    title = request.json
-    meta = get_meta(title['title'])
-    return jsonify(meta)
+# @app.route('/', methods=['POST'])
+# def query_records():
+#     title = request.json
+#     meta = get_meta(title['title'])
+#     return jsonify(meta)
 
 # @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 # def add_message(uuid):
@@ -24,4 +24,3 @@ def query_records():
 #     print(content['mytext'])
 #     return jsonify({"uuid":uuid})
 
-app.run()
