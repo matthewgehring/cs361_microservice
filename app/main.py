@@ -1,5 +1,5 @@
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from wptools import page
 
 def get_meta(title):
@@ -28,7 +28,7 @@ def query_records():
 def images():
     title = request.json
     images = get_images(title['title'])
-    images = jsonify(images)
+    images = Flask.jsonify(images)
     images.headers.add('Access-Control-Allow-Origin', '*')
     return images
 
