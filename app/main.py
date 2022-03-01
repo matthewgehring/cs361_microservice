@@ -20,8 +20,7 @@ def welcome():
 @app.route('/api/data', methods=['POST'])
 def query_records():
     title = request.json
-    meta = get_meta(title['title'])
-    jsonify(meta)
+    meta = Flask.jsonify(get_meta(title['title']))
     meta.headers.add('Access-Control-Allow-Origin', '*')
     return meta
 
