@@ -1,5 +1,4 @@
-import json
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from wptools import page
 
 def get_meta(title):
@@ -20,17 +19,14 @@ def welcome():
 @app.route('/api/data', methods=['POST'])
 def query_records():
     title = request.json
-    meta = Flask.jsonify(get_meta(title['title']))
-    meta.headers.add('Access-Control-Allow-Origin', '*')
-    return meta
+    meta = get_meta(title['title'])
+    return jsonify(meta)
 
 @app.route('/api/image', methods=['POST'])
 def images():
     title = request.json
     images = get_images(title['title'])
-    images = Flask.jsonify(images)
-    images.headers.add('Access-Control-Allow-Origin', '*')
-    return images
+    return jsonify(images)
 
 # @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 # def add_message(uuid):
