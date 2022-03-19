@@ -27,10 +27,3 @@ def images():
     title = request.json
     images = get_images(title['title'])
     return jsonify(images)
-
-# @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
-# def add_message(uuid):
-#     content = request.json
-#     print(content['mytext'])
-#     return jsonify({"uuid":uuid})
-
